@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
     <style>
         /* Always set the map height explicitly to define the size of the div
         * element that contains the map. */
@@ -84,12 +83,8 @@
     </div>
 
     <div id="address-auto-complete" class="container">
-        <div>
-            <input id="inputAddress" type="text" onFocus="geolocate()" onBlur="inputAddressBlur()" placeholder="Enter your address" style="width:480px;"></input>
-        </div>
-        <br><br>
         <div id="locationField">
-            <input id="autocomplete" type="text"></input>
+            <input id="autocomplete" type="text" onFocus="geolocate()"></input>
         </div>
         <br><br>
         <table id="address">
@@ -119,13 +114,6 @@
     </table>
         <script>
             var nbQuery = 1;
-            var $inputAutoComplete = null;
-            var inputElemAddress = document.getElementById('inputAddress');
-            var autoCompleteTimer = null, previousAddressSearch = '';
-
-            $( document ).ready(function() {
-                $inputAutoComplete = $('#autocomplete');
-            });
 
             // This example displays an address form, using the autocomplete feature
             // of the Google Places API to help users fill in the information.
@@ -147,13 +135,17 @@
                 // location types.
                 autocomplete = new google.maps.places.Autocomplete(
                 /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-                {types: ['geocode']});
+                {
+                    types: ['geocode'],
+                    componentRestrictions: {'country': 'ca'}
+                });
 
                 // When the user selects an address from the dropdown, populate the address
                 // fields in the form.
                 autocomplete.addListener('place_changed', fillInAddress);
             }
             function fillInAddress() {
+                console.log(nbQuery++);
                 // Get the place details from the autocomplete object.
                 var place = autocomplete.getPlace();
                 for (var component in componentForm) {
@@ -170,36 +162,9 @@
                     }
                 }
             }
-
-            function inputAddressBlur() {
-                clearInterval(autoCompleteTimer);
-                autoCompleteTimer = null;
-                $('.pac-container.pac-logo').hide();
-            }
-
             // Bias the autocomplete object to the user's geographical location,
             // as supplied by the browser's 'navigator.geolocation' object.
             function geolocate() {
-                console.log(navigator);
-                console.log(navigator.geolocation);
-                if (!autoCompleteTimer) {
-                    //$inputAutoComplete.val(inputElemAddress.value);
-                    //$inputAutoComplete.autocomplete('search');
-
-                    autoCompleteTimer = setInterval(function() {
-                        if (inputElemAddress.value) {
-                            $('.pac-container').hide();
-                        }
-                        if (inputElemAddress.value != previousAddressSearch) {
-                            $inputAutoComplete.val(inputElemAddress.value);
-                            $('.pac-container').show();
-                            initAutocomplete();
-                            console.log('API Count = ' + nbQuery++);
-                        }
-                        previousAddressSearch = inputElemAddress.value;
-                    }, 500);
-                }
-
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function(position) {
                         var geolocation = {
