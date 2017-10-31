@@ -34,7 +34,7 @@ function onWindowScroll() {
         if (!isWindowSetTimeout) {
             if ($w.scrollTop() < 0) {
                 //  Prevent hidding when mobile go over the top mostly Iphone
-                preventWindowOnScroll(3000);
+                preventWindowOnScroll(2500);
                 showSearchBar();
             } else {
                 preventWindowOnScroll();
