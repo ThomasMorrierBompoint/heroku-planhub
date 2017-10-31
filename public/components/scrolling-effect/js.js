@@ -26,7 +26,10 @@ function onWindowScroll() {
         $btnShow.fadeOut(100, () => $searchSummary.slideDown(250));
     }
 
+    var test = document.getElementById('test');
+
     $w = $(window).scroll(function() {
+        test.innerHTML += ' ' + $w.scrollTop() + ' |';
         pos2 = $w.scrollTop();
         if (!isWindowSetTimeout) {
             if ($w.scrollTop() > 5 && $w.scrollTop() < 50) {
