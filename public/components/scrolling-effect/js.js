@@ -11,7 +11,7 @@ var onWindowSetTimeout = null;
 function preventWindowOnScroll(time) {
     isWindowSetTimeout = true;
     clearTimeout(onWindowSetTimeout);
-    onWindowSetTimeout = setTimeout(function() { isWindowSetTimeout = false; }, time || 700);
+    onWindowSetTimeout = setTimeout(function() { isWindowSetTimeout = false; }, time || 500);
 }
 
 function onWindowScroll() {
@@ -34,7 +34,7 @@ function onWindowScroll() {
         if (!isWindowSetTimeout) {
             if ($w.scrollTop() < 0) {
                 //  Prevent hidding when mobile go over the top mostly Iphone
-                preventWindowOnScroll(1750);
+                preventWindowOnScroll(2500);
                 showSearchBar();
             } else {
                 preventWindowOnScroll();
