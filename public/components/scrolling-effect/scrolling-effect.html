@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scrolling Effect</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        nav.navbar {
+            margin-bottom: 0;
+        }
+        hr {
+            height: 3px;
+            background-color: lightblue;
+        }
+        /* Note: Try to remove the following lines to see the effect of CSS positioning */
+        .affix {
+            top: 0;
+            width: 100%;
+            z-index: 9999 !important;
+        }
+
+        .affix + .container-fluid {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Prototype<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/address-auto-complete">Address auto complete</a></li>
+                        <li><a href="/scrolling-effect">Scrolling effet</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="text-center" data-spy="affix" data-offset-top="95">
+        <div id="btnShowSearchSummary" style="display:none;background-color:red;">
+            <br>GOING DOWN<br><br>
+        </div>
+        <div id="sticky-searchbar" style="background-color:green;">
+            <br><br><br>GOING UP<br><br><br>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>Scrolling effect</h3>
+    </div>
+
+    <div style="background-color:lightgrey">
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+        <br><br><br><br><br><hr><br><br><br><br><br>
+    </div>
+
+    <script src="./components/scrolling-effect/js.js"></script>
+</body>
+</html>
