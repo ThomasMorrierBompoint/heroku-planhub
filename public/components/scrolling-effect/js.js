@@ -3,7 +3,7 @@ $(function() {
     onWindowScroll();
 });
 
-var $w;
+var $w, iphoneOverTopTime = 2500;
 var pos1 = 0, pos2 = 0;
 var isWindowSetTimeout = false;
 var onWindowSetTimeout = null;
@@ -17,6 +17,7 @@ function preventWindowOnScroll(time) {
 function onWindowScroll() {
     var $searchSummary = $('#sticky-searchbar');
     var $btnShow = $('#btnShowSearchSummary');
+    var $time = $('#time');
 
     function hideSearchBar() {
         $searchSummary.slideUp(250, () => $btnShow.slideDown(175));
@@ -32,9 +33,10 @@ function onWindowScroll() {
         test.innerHTML += ' ' + $w.scrollTop() + ' |';
         pos2 = $w.scrollTop();
         if (!isWindowSetTimeout) {
+            iphoneOverTopTime = $time.val();
             if ($w.scrollTop() < 0) {
                 //  Prevent hidding when mobile go over the top mostly Iphone
-                preventWindowOnScroll(2500);
+                preventWindowOnScroll($time.val() || 500);
                 showSearchBar();
             } else {
                 preventWindowOnScroll();
