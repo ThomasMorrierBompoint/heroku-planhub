@@ -15,6 +15,10 @@ app.get('/test/:url', function (req, res) {
   cheerioTest.test(res, req.params.url);
 });
 
+app.get('/site-map/:url', function (req, res) {
+  cheerioTest.getSiteMap(res, req.params.url);
+});
+
 app.get('/address-auto-complete', function (req, res) {
   res.sendFile(__dirname + '/public/components/address-auto-complete/address-auto-complete.html');
 });

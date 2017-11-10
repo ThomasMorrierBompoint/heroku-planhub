@@ -9,13 +9,28 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <style media="screen">
-      .col-sm-1, .col-sm-2, .col-sm-5 {
+      .col-xs-1, .col-xs-2, .col-xs-5 {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
       }
       .color200 {
           color: green;
+      }
+      .color301 {
+          color: yellow;
+      }
+      .color404, .color500 {
+          color: red;
+      }
+      .noColor {
+          color: pink;
+      }
+      .row-alert {
+          background-color: rgba(255, 0, 0, 0.45);
+      }
+      .row-title {
+          font-size: 1.3em;
       }
   </style>
 </head>
@@ -40,13 +55,14 @@
 </div>
 
 <div id="test" class="container-fluid">
-    <div class="row">
-        <div class="col-sm-1">Method</div>
-        <div class="col-sm-1">Status</div>
-        <div class="col-sm-2">Date</div>
-        <div class="col-sm-2">Server</div>
-        <div class="col-sm-5">href</div>
-        <div class="col-sm-1">Query</div>
+    <div id="testBtns"></div>
+    <div class="row row-title">
+        <div class="col-xs-1">Method</div>
+        <div class="col-xs-1">Status</div>
+        <div class="col-xs-2">Date</div>
+        <div class="col-xs-2">Server</div>
+        <div class="col-xs-5">href</div>
+        <div class="col-xs-1">Query</div>
     </div>
 </div>
 
