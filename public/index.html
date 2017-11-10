@@ -9,7 +9,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <style media="screen">
-
+      .col-sm-1, .col-sm-2, .col-sm-5 {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+      }
+      .color200 {
+          color: green;
+      }
   </style>
 </head>
 <body>
@@ -32,5 +39,17 @@
   <h3>Home</h3>
 </div>
 
+<div id="test" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-1">Method</div>
+        <div class="col-sm-1">Status</div>
+        <div class="col-sm-2">Date</div>
+        <div class="col-sm-2">Server</div>
+        <div class="col-sm-5">href</div>
+        <div class="col-sm-1">Query</div>
+    </div>
+</div>
+
+<script src="./js.js"></script>
 </body>
 </html>

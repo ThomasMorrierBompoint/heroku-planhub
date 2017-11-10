@@ -3,7 +3,7 @@ $(function() {
     onWindowScroll();
 });
 
-var $w, iphoneOverTopTime = 2500;
+var $w, iphoneOverTopTime = 1500;
 var pos1 = 0, pos2 = 0;
 var isWindowSetTimeout = false;
 var onWindowSetTimeout = null;
