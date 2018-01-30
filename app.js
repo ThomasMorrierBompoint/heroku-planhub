@@ -5,6 +5,12 @@ const SERVER_PORT = 5000;
 
 const cheerioTest = require('./test/cheerio-test');
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
@@ -25,6 +31,14 @@ app.get('/address-auto-complete', function (req, res) {
 
 app.get('/scrolling-effect', function (req, res) {
   res.sendFile(__dirname + '/public/components/scrolling-effect/scrolling-effect.html');
+});
+
+app.get('/vue-modal', function (req, res) {
+  res.sendFile(__dirname + '/public/components/vue-modal/vue-modal.html');
+});
+
+app.get('/widget/protegez-vous/modal-choose-phone', function (req, res) {
+  res.sendFile(__dirname + '/public/components/widget/modal-choose-phone/protegez-vous/index.html');
 });
 
 server.listen(process.env.PORT || SERVER_PORT, () => {
