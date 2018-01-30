@@ -55,7 +55,7 @@
                 build: undefined,
                 province: 'quebec',
                 nav: 'mobile',
-                searchUrl: 'http://local.www.planhub.ca/quebec/compare-cellphone-plan',
+                searchUrl: 'https://www.planhub.ca/fr/quebec/comparer-forfait-cellulaire',
                 entryPoint: '#planhubWidgetMobileSearchBar'
             };
 
