@@ -79,41 +79,63 @@
                             <form role="search" action="/" name="usage">
                                 <input type="hidden" name="province" value="quebec">
                                 <div class="row">
-                                    <h1>What do you need for your cell phone plan?</h1>
+                                    <h1>Quels sont vos besoins pour votre forfait cellulaire ?</h1>
                                     <div class="form-group col-sm-3 col-xs-6 text-center">
-                                        <label for="voice">Calling minutes</label>
+                                        <label for="voice">Minutes d'appel</label>
                                         <select name="voice" id="voice" class="form-control selectUsage">
-                                            <option value="0min" disabled="" selected="">Choose a duration</option>
+                                            <option value="0min" disabled="" selected="">Choisir une durée</option>
                                             <option value="0min">0 min</option>
                                             <option value="50min">50 min</option>
-                                            <option value="unlimitedcalls">Unlimited Calls</option>
+                                            <option value="100min">100 min</option>
+                                            <option value="200min">200 min</option>
+                                            <option value="300min">300 min</option>
+                                            <option value="400min">400 min</option>
+                                            <option value="500min">500 min</option>
+                                            <option value="1000min">1000 min</option>
+                                            <option value="unlimitedcalls">Appels illimités</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-sm-3 col-xs-6 text-center">
-                                        <label for="data">Data</label>
+                                        <label for="data">Données</label>
                                         <select name="data" id="data" class="form-control selectUsage">
-                                            <option value="0MB" disabled="" selected="">Choose an amount</option>
-                                            <option value="0MB">0 MB</option>
-                                            <option value="50MB">50 MB</option>
+                                        <option value="0MB" disabled="" selected="">Choisir une quantité</option>
+                                        <option value="0MB">0 Mo</option>
+                                        <option value="50MB">50 Mo</option>
+                                        <option value="100MB">100 Mo</option>
+                                        <option value="200MB">200 Mo</option>
+                                        <option value="300MB">300 Mo</option>
+                                        <option value="400MB">400 Mo</option>
+                                        <option value="500MB">500 Mo</option>
+                                        <option value="1000MB">1 Go</option>
+                                        <option value="2000MB">2 Go</option>
+                                        <option value="3000MB">3 Go</option>
+                                        <option value="4000MB">4 Go</option>
+                                        <option value="5000MB">5 Go</option>
+                                        <option value="6000MB">6 Go</option>
+                                        <option value="7000MB">7 Go</option>
+                                        <option value="8000MB">8 Go</option>
+                                        <option value="9000MB">9 Go</option>
+                                        <option value="10000MB">10 Go</option>
+                                        <option value="15000MB">15 Go</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3 col-sm-6 col-xs-12 text-center">
-                                        <label for="phone">Cell phone</label>
+                                        <label for="phone">Cellulaire</label>
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span id="dropdown-choice-label">Choose an option</span>
+                                                <span id="dropdown-choice-label">Choisir une option</span>
                                                 <div class="caret-overflow"><span class="caret"></span></div>
                                             </button>
                                             <ul class="dropdown-menu">
                                                 <span class="row">
-                                                    <li class="col-sm-12 text-center" data-translation="Purchase phone" data-translation2="Change phone">
+                                                    <li class="col-sm-12 text-center" data-translation="Acheter un téléphone" data-translation2="Changer de téléphone">
                                                         <button type="button" class="btn btn-info btn-lg btn-choice btn-choice-new">
-                                                            Purchase phone
+                                                            Acheter un téléphone
                                                         </button>
                                                     </li>
                                                     <li class="col-sm-12 text-center">
-                                                        <button type="button" data-name="BYOD" class="btn btn-info btn-lg btn-choice btn-choice-keep ">
-                                                            Bring your own phone
+                                                        <button type="button" data-name="Apportez Votre Appareil" class="btn btn-info btn-lg btn-choice btn-choice-keep ">
+                                                            Apporter votre téléphone
                                                         </button>
                                                     </li>
                                                 </span>
@@ -122,7 +144,7 @@
                                     </div>
                                     <div class="col-md-3 col-xs-12">
                                         <button type="button" class="btn btn-primary btn-block btn-search">
-                                            Search <i class="icon-check-planhub"></i>
+                                            Rechercher <i class="icon-check-planhub"></i>
                                         </button>
                                     </div>
                                 </div>
