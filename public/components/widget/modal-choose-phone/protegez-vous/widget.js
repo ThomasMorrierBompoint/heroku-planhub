@@ -282,17 +282,24 @@
                 manifest.src='/components/widget/modal-choose-phone/protegez-vous/static/manifest.39.js';
                 vendor.src='/components/widget/modal-choose-phone/protegez-vous/static/vendor.39.js';
 
-                $(app.entryPoint).append(manifest);
-                $(app.entryPoint).append(vendor);
-                setTimeout(() => $(app.entryPoint).append(x), 50);
-                setTimeout(() => {
-                    $(app.entryPoint).append(appScript);
+                let appScriptId = app.entryPoint.substring(1, 50);
+
+                appScript.onload = function() {
                     setTimeout(() => {
-                        $(app.entryPoint + ' .search-block-home').css('opacity', 1);
-                        $('#planhubWidgetMobileSearchBar-loader').remove();
+                        document.querySelector(app.entryPoint + ' .search-block-home').style.opacity = 1;
+                        document.getElementById(appScriptId + '-loader').remove();
                         console.warn('Widget Done!');
-                    }, 1000);
-                }, 1000);
+                    }, 500);
+                };
+
+                vendor.onload = function() {
+                    console.log('Adding vue');
+                    document.getElementById(appScriptId).appendChild(appScript);
+                };
+
+                document.getElementById(appScriptId).appendChild(x);
+                document.getElementById(appScriptId).appendChild(manifest);
+                document.getElementById(appScriptId).appendChild(vendor);
 
                 $('.btn-search').off().click(function(e) {
                     e.originalEvent.defaultPrevented;
