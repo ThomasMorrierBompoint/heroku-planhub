@@ -11,10 +11,18 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(express.static('public'));
+app.use(express.static('public', { maxAge: 5 * 60 * 60 * 1000 }));
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
+});
+
+app.get('/test-navigator', function (req, res) {
+  res.sendFile(__dirname + '/public/components/test/index.html');
+});
+
+app.get('/cache-test', function (req, res) {
+  res.sendFile(__dirname + '/public/components/cache-test/index.html');
 });
 
 app.get('/test/:url', function (req, res) {
