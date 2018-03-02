@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-app.get('/test-navigator', function (req, res) {
+app.get('/test-widget', function (req, res) {
   res.sendFile(__dirname + '/public/components/test/index.html');
 });
 
