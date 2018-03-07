@@ -17,8 +17,17 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/logo-test', function (req, res) {
+  console.log(req.headers['user-agent']);
+  console.log(req.query);
+  res.sendFile(__dirname + '/public/components/cache-test/logo.png');
+});
+
 app.get('/test-widget', function (req, res) {
   res.sendFile(__dirname + '/public/components/test/index.html');
+});
+app.get('/test-widget-preprod', function (req, res) {
+  res.sendFile(__dirname + '/public/components/test/preprod.html');
 });
 
 app.get('/cache-test', function (req, res) {
