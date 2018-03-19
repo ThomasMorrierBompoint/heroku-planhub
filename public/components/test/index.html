@@ -9,6 +9,7 @@
 <body>
     <input id="domain" type="text" value="protegezvous" placeholder="Domain">
     <input id="locale" type="text" value="fr" placeholder="Langue">
+    <input id="widget-src" type="text" value="https://www.planhub.ca/fr/widget/protegezvous/mobile-search-bar?entrypoint=planhubWidgetMobileSearchBar&province=quebec" placeholder="Widget src">
     <input type="button" value="Start" onclick="init()">
     <br>
     <textarea rows="15" cols="100">
@@ -59,9 +60,14 @@
     var init = function() {
         var domain = document.getElementById('domain').value;
         var locale = document.getElementById('locale').value;
+        var widgetSrc = document.getElementById('widget-src').value;
 
         var widget = document.createElement('SCRIPT');
-        widget.src='https://www.planhub.ca/'+locale+'/widget/'+domain+'/mobile-search-bar?entrypoint=planhubWidgetMobileSearchBar&province=quebec';
+        if (widgetSrc) {
+            widget.src=widgetSrc;
+        } else {
+            widget.src='https://www.planhub.ca/'+locale+'/widget/'+domain+'/mobile-search-bar?entrypoint=planhubWidgetMobileSearchBar&province=quebec';
+        }
         document.getElementById('planhubWidgetMobileSearchBar').appendChild(widget);
     };
     </script>
