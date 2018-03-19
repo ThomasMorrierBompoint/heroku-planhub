@@ -1,17 +1,14 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const server = require('http').Server(app);
 const SERVER_PORT = 5000;
 
 const cheerioTest = require('./test/cheerio-test');
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+app.use(cors());
 
-app.use(express.static('public', { maxAge: 5 * 60 * 60 * 1000 }));
+app.use(express.static('public'));
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
